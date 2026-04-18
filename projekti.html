@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projekti | GRADNJA D.O.O.</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all .8s ease;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MENU */
+#mobileMenu {
+  transform: translateX(-100%);
+}
+#mobileMenu.active {
+  transform: translateX(0);
+}
+</style>
+</head>
+
+<body class="font-sans text-gray-800">
+
+<!-- HEADER -->
+<header class="fixed w-full bg-white/90 backdrop-blur z-50 shadow">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+
+    <div class="font-bold text-lg">🏗️ GRADNJA</div>
+
+    <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-yellow-500">Početna</a>
+        <a href="o-nama.html" class="hover:text-yellow-500">O nama</a>
+        <a href="usluge.html" class="hover:text-yellow-500">Usluge</a>
+        <a href="projekti.html" class="hover:text-yellow-500">Projekti</a>
+        <a href="kontakt.html" class="hover:text-yellow-500">Kontakt</a>
+    </nav>
+
+    <a href="#" class="hidden md:block bg-yellow-500 text-white px-4 py-2 rounded-lg">
+      ZATRAŽITE PONUDU
+    </a>
+
+    <button id="menuBtn" class="md:hidden">
+      <i data-lucide="menu"></i>
+    </button>
+
+  </div>
+</header>
+
+<!-- OVERLAY -->
+<div id="overlay" class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition z-[998]"></div>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="fixed top-0 left-0 w-[80%] max-w-sm h-full bg-white z-[999] p-6 transition duration-300 flex flex-col">
+
+  <div class="flex justify-between items-center mb-10">
+    <div class="font-bold text-lg">🏗️ GRADNJA</div>
+    <button id="closeMenu"><i data-lucide="x"></i></button>
+  </div>
+
+  <nav class="flex flex-col gap-6 text-lg font-medium">
+    <a href="index.html">Početna</a>
+    <a href="o-nama.html">O nama</a>
+    <a href="usluge.html">Usluge</a>
+    <a href="projekti.html" class="text-yellow-500">Projekti</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+
+  <a href="#" class="mt-10 bg-yellow-500 text-white px-6 py-3 rounded-lg text-center">
+    ZATRAŽITE PONUDU
+  </a>
+</div>
+
+<!-- HERO -->
+<section class="relative h-[60vh] flex items-center justify-center text-center">
+  <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+       class="absolute w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="relative text-white fade-in">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Naši projekti</h1>
+    <p>Pregled uspešno realizovanih projekata</p>
+  </div>
+</section>
+
+<!-- FILTER -->
+<section class="py-10 text-center">
+  <div class="flex justify-center gap-4 flex-wrap">
+    <button class="px-4 py-2 bg-yellow-500 text-white rounded">Svi</button>
+    <button class="px-4 py-2 border rounded">Kuće</button>
+    <button class="px-4 py-2 border rounded">Zgrade</button>
+    <button class="px-4 py-2 border rounded">Poslovni</button>
+  </div>
+</section>
+
+<!-- PROJEKTI GRID -->
+<section class="py-10">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+
+    <!-- ITEM -->
+    <div class="group relative overflow-hidden rounded-xl fade-in">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+           class="w-full h-64 object-cover group-hover:scale-110 transition">
+
+      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-4 text-white">
+        <h3 class="font-bold">Porodična kuća</h3>
+        <p class="text-sm">Novi Sad</p>
+      </div>
+    </div>
+
+    <div class="group relative overflow-hidden rounded-xl fade-in">
+      <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4"
+           class="w-full h-64 object-cover group-hover:scale-110 transition">
+      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-4 text-white">
+        <h3 class="font-bold">Stambena zgrada</h3>
+        <p class="text-sm">Beograd</p>
+      </div>
+    </div>
+
+    <div class="group relative overflow-hidden rounded-xl fade-in">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+           class="w-full h-64 object-cover group-hover:scale-110 transition">
+      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-4 text-white">
+        <h3 class="font-bold">Poslovni objekat</h3>
+        <p class="text-sm">Novi Sad</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DETALJ -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+         class="rounded-xl fade-in">
+
+    <div class="fade-in">
+      <h2 class="text-3xl font-bold mb-4">Izdvojen projekat</h2>
+      <p class="mb-4">
+        Moderan stambeni objekat izgrađen po najvišim standardima kvaliteta.
+      </p>
+
+      <ul class="space-y-2 text-sm">
+        <li>✔ Površina: 250m²</li>
+        <li>✔ Lokacija: Novi Sad</li>
+        <li>✔ Rok: 6 meseci</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="relative py-20 text-white text-center">
+  <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+       class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="relative">
+    <h2 class="text-3xl font-bold mb-4">Imate projekat?</h2>
+    <p class="mb-6">Kontaktirajte nas i dobijte ponudu.</p>
+    <a href="#" class="bg-yellow-500 px-6 py-3 rounded-lg">
+      KONTAKT
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-sm">
+  
+      <div>
+        <h3 class="text-white font-bold mb-4">GRADNJA</h3>
+        <p>Profesionalna građevinska firma.</p>
+      </div>
+  
+      <div>
+        <h4 class="text-white mb-3">Navigacija</h4>
+        <ul class="space-y-2">
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="o-nama.html">O nama</a></li>
+            <li><a href="usluge.html">O nama</a></li>
+            <li><a href="projekti.html">O nama</a></li>
+            <li><a href="kontakt.html">O nama</a></li>
+        </ul>
+      </div>
+  
+      <div>
+        <h4 class="text-white mb-3">Kontakt</h4>
+        <p>+381 64 123 45 67</p>
+        <p>office@gradnja.rs</p>
+      </div>
+  
+      <div>
+        <h4 class="text-white mb-3">Pratite nas</h4>
+        <div class="flex gap-4 text-white text-xl">
+  
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        
+        </div>
+      </div>
+  
+    </div>
+  
+    <div class="text-center mt-10 text-xs text-gray-500">
+      © 2026 GRADNJA D.O.O.
+    </div>
+  </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  lucide.createIcons();
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const closeMenu = document.getElementById("closeMenu");
+  const overlay = document.getElementById("overlay");
+
+  function openMenu() {
+    mobileMenu.classList.add("active");
+    overlay.classList.remove("opacity-0","pointer-events-none");
+    document.body.classList.add("overflow-hidden");
+  }
+
+  function closeMenuFunc() {
+    mobileMenu.classList.remove("active");
+    overlay.classList.add("opacity-0","pointer-events-none");
+    document.body.classList.remove("overflow-hidden");
+  }
+
+  menuBtn.addEventListener("click", openMenu);
+  closeMenu.addEventListener("click", closeMenuFunc);
+  overlay.addEventListener("click", closeMenuFunc);
+
+});
+</script>
+
+</body>
+</html>
