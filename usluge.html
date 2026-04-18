@@ -58,15 +58,29 @@
 
   </div>
 </header>
-
-
 <!-- OVERLAY -->
-  <a href="#" class="mt-10 bg-yellow-500 text-white px-6 py-3 rounded-lg text-center">
-    ZATRAŽITE PONUDU
-  </a>
+<div id="overlay" class="fixed inset-0 bg-black/50 z-40 opacity-0 pointer-events-none transition"></div>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="fixed top-0 left-0 w-[80%] max-w-sm h-full bg-white z-50 p-6 transform -translate-x-full transition">
+
+  <div class="flex justify-between items-center mb-10">
+    <div class="font-bold text-lg">🏗️ GRADNJA</div>
+
+    <button id="closeMenu">
+      <i data-lucide="x"></i>
+    </button>
+  </div>
+
+  <nav class="flex flex-col gap-6 text-lg font-medium">
+    <a href="index.html">Početna</a>
+    <a href="o-nama.html">O nama</a>
+    <a href="usluge.html">Usluge</a>
+    <a href="projekti.html">Projekti</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
 
 </div>
-
 
 <!-- HERO -->
 <section class="relative h-[70vh] flex items-center justify-center text-center">
